@@ -17,10 +17,10 @@ import com.cpt202.appointment_system.Models.User;
 public class FileUploadUtil {
 
     
-    // private static final String USERPATH = "C:\\Users\\Administrator\\User_images\\";
-    // private static final String GROOMERPATH = "C:\\Users\\Administrator\\Groomer_images\\";
-    private static final String USERPATH = "C:\\Users\\86138\\Desktop\\User_images\\";
-    private static final String GROOMERPATH = "C:\\Users\\86138\\Desktop\\Groomer_images\\";
+    private static final String USERPATH = "C:\\Users\\Administrator\\User_images\\";
+    private static final String GROOMERPATH = "C:\\Users\\Administrator\\Groomer_images\\";
+    // private static final String USERPATH = "C:\\Users\\86138\\Desktop\\User_images\\";
+    // private static final String GROOMERPATH = "C:\\Users\\86138\\Desktop\\Groomer_images\\";
     private static final String PETPATH = "\\Pet_images\\";
 
     private static final String GROOMERPATH_URL_STRING = "/g-images/";

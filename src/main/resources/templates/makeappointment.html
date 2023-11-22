@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>IPet - Petcare HTML 5 Website Template</title>
+    <title>IPet</title>
 
     <!-- Stylesheets -->
     <link href="/assets/css/font-awesome-all.css" rel="stylesheet">
@@ -515,7 +515,7 @@
                     <div class="divider" style="background-image: url(/assets/images/icons/divider-1.png);"></div>
                 </div>
                 <div class="row clearfix">
-                    <div class="col-lg-3 col-md-6 col-sm-12 team-block" th:each="groomer : ${gList}" >
+                    <div class="col-lg-3 col-md-6 col-sm-12 team-block" th:each="groomer : ${sortedRankgroomers}" >
                         <div class="team-block-two wow fadeInUp animated animated" data-wow-delay="00ms" 
                         data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; 
                         animation-delay: 0ms; animation-name: fadeInUp;">

@@ -9,6 +9,7 @@ import com.cpt202.appointment_system.intercepter.AuthenticationInterceptor;;
 public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+        
         registry.addInterceptor(new AuthenticationInterceptor())
                 .addPathPatterns("/**") // 拦截所有请求
                 .excludePathPatterns("/appointment-system**") // 排除登录页面
@@ -17,4 +18,5 @@ public class WebConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/assets/js/**") // 排除 JavaScript 静态资源
                 .excludePathPatterns("/assets/images/**"); // 排除图片静态资源
     }
+
 }

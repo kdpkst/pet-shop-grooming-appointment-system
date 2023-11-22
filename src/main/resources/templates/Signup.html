@@ -20,8 +20,8 @@
 
 <button id="Login" onclick="start()">Log in</button>
 <button id="Logout" style="display: none;">Log out</button>
-<button id='Profile' >个人界面</button>
-<button id='Appointment' >订单界面</button>
+<button id='Profile' >Personal Page</button>
+<button id='Appointment' >Appointment Page</button>
 
 
 <input id="user" th:value="${session.user}">
@@ -84,7 +84,7 @@ function Appoint(){
         }
     </script>
 
-    <h1>欢迎，<span th:text="${session.user}"></span></h1>
+    <h1>Welcome, <span th:text="${session.user}"></span></h1>
 
 <div id="signform" class="modal_sign" style="display: none">
   <div class="container_sign">
@@ -97,22 +97,22 @@ function Appoint(){
     <form class="form" action="/appointment-system" id="loginForm" method="post">
       <!-- <input type="hidden" name="action" value="login"> -->
       <div class="form_control_sign">
-        <label for="uname">用户名</label>
-        <input type="text" placeholder="请输入用户名" id="uname" name="uname">
+        <label for="uname">Username</label>
+        <input type="text" placeholder="Please enter your username" id="uname" name="uname">
         <i class="el-icon-success"></i>
         <i class="el-icon-warning"></i>
         <small>Error Message</small>
       </div>
       <div class="form_control_sign">
-        <label for="upwd">密码</label>
-        <input type="password" placeholder="请输入密码" id="upwd" name="upwd">
+        <label for="upwd">Password</label>
+        <input type="password" placeholder="Please enter your password" id="upwd" name="upwd">
         <i class="el-icon-success"></i>
         <i class="el-icon-warning"></i>
         <small>Error Message</small>
       </div>
       <button class="theme-btn btn-seven" id="loginBtn" >Log in</button>
-      <p>还没有账号?赶快<a href="#" style="text-decoration: none;color: #43A047" onclick="signre()">Sign up</a>一个吧</p>
-      <p>忘记密码？点击<a href="/reset-password-form" style="text-decoration: none;color: #43A047" onclick="signre()">找回</a>一个吧</p>
+      <p>Don't have an account yet? Hurry up!<a href="#" style="text-decoration: none;color: #43A047" onclick="signre()">Sign up</a>one</p>
+      <p>Forgot your password? Click<a href="/reset-password-form" style="text-decoration: none;color: #43A047" onclick="signre()">Retrieve</a>your password</p>
     </form>
   </div>
 </div>
@@ -129,47 +129,47 @@ function Appoint(){
     <form action="/appointment-system/reg" class="form" id="Registerform" method="post">
       <!-- <input type="hidden" name="action" value="login"> -->
           <div class="form_control_sign">
-                <label for="username">用户名</label>
-                <input type="text" placeholder="请输入用户名" id="username" name="rename"><br>
+                <label for="username">Username</label>
+                <input type="text" placeholder="Please enter your username" id="username" name="rename"><br>
                 <i class="el-icon-success"></i>
                 <i class="el-icon-warning"></i>
                 <small>Error Message</small>
           </div>
 
           <div class="form_control_sign">
-                <label for="email">邮箱</label>
-                <input type="text" placeholder="请输入邮箱" id="email" name="reemail"><br>
+                <label for="email">Email</label>
+                <input type="text" placeholder="Please enter your email" id="email" name="reemail"><br>
                 <i class="el-icon-success"></i>
                 <i class="el-icon-warning"></i>
                 <small>Error Message</small>
           </div>
 
           <div class="form_control_sign">
-            <label for="phone">手机</label>
-            <input type="text" placeholder="输入手机号" id="phone" name="phone"><br>
+            <label for="phone">Phone Number</label>
+            <input type="text" placeholder="Please enter your phone number" id="phone" name="phone"><br>
             <i class="el-icon-success"></i>
             <i class="el-icon-warning"></i>
             <small>Error Message</small>
       </div>
 
           <div class="form_control_sign">
-                <label for="password">密码</label>
-                <input type="password" placeholder="请输入密码" id="password" name="repass"><br>
+                <label for="password">Password</label>
+                <input type="password" placeholder="Please enter your password" id="password" name="repass"><br>
                 <i class="el-icon-success"></i>
                 <i class="el-icon-warning"></i>
                 <small>Error Message</small>
           </div>
 
           <div class="form_control_sign">
-                <label for="password2">重复密码</label>
-                <input type="password" placeholder="请再次输入密码" id="password2" name="repass2"><br>
+                <label for="password2">Repeat Password</label>
+                <input type="password" placeholder="Please enter your password again" id="password2" name="repass2"><br>
                 <i class="el-icon-success"></i>
                 <i class="el-icon-warning"></i>
                 <small>Error Message</small>
           </div>
 
       <button class="theme-btn btn-seven" type="submit" >Submit</button>
-      <p>已有账号密码<a href="#" style="text-decoration: none;color: #43A047" onclick="resign()">Log in</a>一个吧</p>
+      <p>Already have account and password<a href="#" style="text-decoration: none;color: #43A047" onclick="resign()">Log in</a>one</p>
     </form>
     <p th:text="${message}"></p>
   </div>

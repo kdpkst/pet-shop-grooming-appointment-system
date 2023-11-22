@@ -1,0 +1,26 @@
+version: "1.0.0"
+services:
+  mysql_db:
+    image: mysql:8.0.30
+    restart: always
+    ports:
+      - 3366:3306
+    environment:
+      MYSQL_DATABASE: pet_shop
+      MYSQL_USER: groupten
+      MYSQL_PASSWORD: onlyfortest
+      MYSQL_ROOT_PASSWORD: nE5kMc7JCGNqwDQN
+
+  springboot-app:
+    depends_on:
+      - mysql_db
+    build: .
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql_db:3306/pet_shop?autoReconnect=true
+      SPRING.DATASOURCE.USERNAME : groupten
+      SPRING.DATASOURCE.PASSWORD : onlyfortest
+  
+

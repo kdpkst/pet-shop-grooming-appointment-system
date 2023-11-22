@@ -39,7 +39,7 @@ public interface AppointmentRepo extends JpaRepository<Appointment, Integer> {
     public List<Appointment> findBySid(Integer sid);
 
     @Transactional(timeout = 10)
-    @Query(value = "SELECT * FROM appointment WHERE total_price = ?1", nativeQuery = true)
+    @Query(value = "SELECT * FROM appointment WHERE totalprice = ?1", nativeQuery = true)
     public List<Appointment> findBytotalPrice(Double price);
 
     @Transactional(timeout = 10)

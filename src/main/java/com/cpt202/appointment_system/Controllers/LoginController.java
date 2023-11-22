@@ -85,12 +85,12 @@ public class LoginController {
         User user=new User(null, username, password, 0, null, "/assets/images/default-user.png", null, phone, email, 0);
 
         if(loginService.registerUser(user)==1){
-            redirectAttributes.addFlashAttribute("error", "注册失败:用户名已被注册或格式不符");
+            redirectAttributes.addFlashAttribute("error", "Registration failed: Username has been registered or format does not match");
             return "redirect:/appointment-system";
         }
         
         else if(loginService.registerUser(user)==2){
-            redirectAttributes.addFlashAttribute("error", "注册失败:邮箱已被注册");
+            redirectAttributes.addFlashAttribute("error", "Registration failed: Mailbox has been registered");
             return "redirect:/appointment-system";
         }
         
@@ -98,7 +98,7 @@ public class LoginController {
 
             session.setAttribute("user", username);
             session.setAttribute("role", 0);
-            redirectAttributes.addFlashAttribute("message", "注册成功：已为您自动登录");
+            redirectAttributes.addFlashAttribute("message", "Successful registration: You are automatically logged in");
             
             return "redirect:/appointment-system";
 
@@ -166,7 +166,7 @@ public class LoginController {
         User user = userRepository.findByUsername(username);
 
         if (user == null) {
-            redirectAttributes.addFlashAttribute("error", "用户名不存在，请检查输入是否正确。");
+            redirectAttributes.addFlashAttribute("error", "User name does not exist. Please check if the input is correct.");
             return "redirect:/reset-password-form";
         }
 
@@ -174,11 +174,11 @@ public class LoginController {
         int verificationCode = generateVerificationCode();
         verificationCodes.put(username, verificationCode);
 
-        String subject = "重置密码验证码";
-        String text = "尊敬的用户 " + username + "，您的重置密码验证码为：" + verificationCode + "。请妥善保管。";
+        String subject = "Reset password verification code";
+        String text = "Dear user " + username + ", your password reset verification code is: " + verificationCode + ". Please keep it in a safe place.";
 
         emailService.sendSimpleMessage(email, subject, text);
-        redirectAttributes.addFlashAttribute("success", "验证码已发送至您的邮箱，请注意查收。");
+        redirectAttributes.addFlashAttribute("success", "The verification code has been sent to your email, please pay attention to check it.");
         return "redirect:/reset-password-form";
     }
 
@@ -190,7 +190,7 @@ public class LoginController {
         Integer correctVerificationCode = verificationCodes.get(username);
 
         if (correctVerificationCode == null || correctVerificationCode != verificationCode) {
-            redirectAttributes.addFlashAttribute("error", "验证码错误，请检查输入或重新发送验证码。");
+            redirectAttributes.addFlashAttribute("error", "The verification code is wrong, please check the input or resend the verification code.");
             return "redirect:/reset-password-form";
         }
 
@@ -198,7 +198,7 @@ public class LoginController {
         user.setPassword(newPassword);
         userRepository.save(user);
 
-        redirectAttributes.addFlashAttribute("success", "密码重置成功，请使用新密码登录。");
+        redirectAttributes.addFlashAttribute("success", "Password reset successfully, please use the new password to login.");
         return "redirect:/appointment-system";
     }
 
